@@ -4,7 +4,8 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.7);
+    background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -13,6 +14,15 @@ window#waybar {
 window#waybar.hidden {
     opacity: 0.2;
 }
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
 
 window#waybar.termite {
     background-color: #3F3F3F;
@@ -39,7 +49,7 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    color: #a37800;
+    background-color: #a37800;
 }
 
 #workspaces button {
@@ -57,16 +67,12 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#workspaces button.active {
-    color: #26A65B;
-}
-
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
 #mode {
-    background-color: #ffffff;
+    background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -86,21 +92,15 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
-#mpd,
-#custom-power {
+#mpd {
     padding: 0 10px;
-    border-radius: 15px;
-    color: #000000;
-    background-color: #ffffff;
-    margin: 8px 0;
+    color: #ffffff;
 }
 
 #window,
 #workspaces {
     margin: 0 4px;
 }
-
-/* ----------------------------- */
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
@@ -111,32 +111,32 @@ button:hover {
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
-/* 
+
 #clock {
     background-color: #64727D;
-} */
+}
 
-/* #battery {
+#battery {
     background-color: #ffffff;
     color: #000000;
-} */
+}
 
 #battery.charging, #battery.plugged {
-    color: #26A65B;
-    /* background-color: #26A65B; */
+    color: #ffffff;
+    background-color: #26A65B;
 }
 
 @keyframes blink {
     to {
-        /* background-color: #ffffff; */
-        color: #ffffff;
+        background-color: #ffffff;
+        color: #000000;
     }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    /* background-color: #f53c3c; */
-    color: #f53c3c;
+    background-color: #f53c3c;
+    color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -149,25 +149,25 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    color: #f53c3c;
-    /* background-color: #ffffff; */
+    background-color: #f53c3c;
+    color: #ffffff;
 }
 
 #power-profiles-daemon.balanced {
-    color: #2980b9;
-    /* color: #ffffff; */
+    background-color: #2980b9;
+    color: #ffffff;
 }
 
 #power-profiles-daemon.power-saver {
-    color: #2ecc71;
-    /* color: #000000; */
+    background-color: #2ecc71;
+    color: #000000;
 }
 
 label:focus {
     background-color: #000000;
 }
 
-/* #cpu {
+#cpu {
     background-color: #2ecc71;
     color: #000000;
 }
@@ -186,32 +186,34 @@ label:focus {
 
 #network {
     background-color: #2980b9;
-} */
-
-#network.disconnected {
-    color: #f53c3c;
 }
 
-/* #pulseaudio {
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#pulseaudio {
     background-color: #f1c40f;
     color: #000000;
-} */
+}
 
 #pulseaudio.muted {
-    color: #90b1b1;
-    /* color: #2a5c45; */
+    background-color: #90b1b1;
+    color: #2a5c45;
 }
 
 #wireplumber {
-    color: #fff0f5;
+    background-color: #fff0f5;
+    color: #000000;
 }
 
 #wireplumber.muted {
-    color: #f53c3c;
+    background-color: #f53c3c;
 }
 
 #custom-media {
-    color: #66cc99;
+    background-color: #66cc99;
+    color: #2a5c45;
     min-width: 100px;
 }
 
@@ -223,12 +225,12 @@ label:focus {
     background-color: #ffa000;
 }
 
-/* #temperature {
-    color: #f0932b;
-} */
+#temperature {
+    background-color: #f0932b;
+}
 
 #temperature.critical {
-    color: #eb4d4b;
+    background-color: #eb4d4b;
 }
 
 #tray {
@@ -245,29 +247,29 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #ffffff;
+    background-color: #2d3436;
 }
 
 #idle_inhibitor.activated {
-    color: green;
+    background-color: #ecf0f1;
+    color: #2d3436;
 }
 
-
 #mpd {
-    color: #66cc99;
-    /* color: #2a5c45; */
+    background-color: #66cc99;
+    color: #2a5c45;
 }
 
 #mpd.disconnected {
-    color: #f53c3c;
+    background-color: #f53c3c;
 }
 
 #mpd.stopped {
-    color: #90b1b1;
+    background-color: #90b1b1;
 }
 
 #mpd.paused {
-    color: #51a37a;
+    background-color: #51a37a;
 }
 
 #language {

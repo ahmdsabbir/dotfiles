@@ -7,7 +7,6 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-	"custom/menu",
         "hyprland/workspaces",
     ],
     "modules-center": [
@@ -17,25 +16,25 @@
         "mpd",
         "idle_inhibitor",
         "pulseaudio",
+        "network",
         "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
         "backlight",
-        // "hyprland/language",
+        "sway/language",
         "battery",
-        // "battery#bat2",
-	"network",
+        "battery#bat2",
         "clock",
-        // "tray",
-	"custom/power",
+        "tray",
+        "custom/power"
     ],
     // Modules configuration
      "hyprland/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
          "warp-on-scroll": false,
-         "format": "{name}",
+         "format": "{name}: {icon}",
          "format-icons": {
              "urgent": "",
              "active": "",
@@ -51,10 +50,10 @@
             "unlocked": ""
         }
     },
-    "hyprland/mode": {
+    "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "hyprland/scratchpad": {
+    "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": ["", ""],
@@ -159,12 +158,11 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        //"format-wifi": "{essid} ({signalStrength}%) ",
-        "format-wifi": " {signalStrength}%",
+        "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} \n{essid}",
+        "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "",
+        "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
@@ -198,27 +196,16 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
-    // "custom/power": {
-    //     "format" : "⏻ ",
-	// 	"tooltip": false,
-	// 	"menu": "on-click",
-	// 	"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-	// 	"menu-actions": {
-	// 		"shutdown": "shutdown",
-	// 		"reboot": "reboot",
-	// 		"suspend": "systemctl suspend",
-	// 		"hibernate": "systemctl hibernate"
-	// 	}
-    // },
     "custom/power": {
-	"format": "⏻",
-	"tooltip": false,
-	"on-click": "wlogout &"
-   },
-    "custom/menu": {
-	"format": " \uf135 ",
-	"on-click": "wofi --show drun",
-	"tooltip": true,
-	"tooltip-format": "Open Application Launcher"
+        "format" : "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
     }
 }
