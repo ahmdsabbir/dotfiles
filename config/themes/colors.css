@@ -1,0 +1,15 @@
+/* Base CSS colors */
+
+@define-color bg rgba(46, 52, 64, 0.85);       /* #2e3440 */
+@define-color bg_alt rgba(59, 66, 82, 0.8);    /* #3b4252 */
+@define-color fg rgba(216, 222, 233, 1.0);     /* #d8dee9 */
+@define-color fg_alt rgba(136, 144, 168, 1.0); /* soft grey */
+@define-color accent rgba(94, 129, 172, 0.9);      /* #5e81ac */
+@define-color accent_alt rgba(129, 161, 193, 0.85);/* #81a1c1 */
+@define-color highlight rgba(67, 76, 94, 0.7);     /* #434c5e */
+@define-color alert rgba(191, 97, 106, 1.0);       /* #bf616a */
+@define-color warning rgba(208, 135, 112, 1.0);    /* #d08770 */
+@define-color success rgba(163, 190, 140, 1.0);    /* #a3be8c */
+@define-color info rgba(136, 192, 208, 1.0);       /* #88c0d0 */
+@define-color border rgba(76, 86, 106, 0.6);       /* #4c566a */
+@define-color shadow rgba(0, 0, 0, 0.4);           /* black, 40% */

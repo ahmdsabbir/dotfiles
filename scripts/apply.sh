@@ -32,6 +32,7 @@ copy_config "hypr"
 copy_config "waybar"
 copy_config "wlogout"
 copy_config "wofi"
+copy_config "themes"
 
 echo "Dotfiles applied."
 

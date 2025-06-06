@@ -1,0 +1,6 @@
+/* Generic CSS Variables */
+@define-color bg      #386641;  /* Hunter Green */
+@define-color bg_alt  #6a994e;  /* Asparagus */
+@define-color fg      #f2e8cf;  /* Parchment */
+@define-color accent  #a7c957;  /* Yellow Green */
+@define-color alert   #bc4749;  /* Bittersweet */
